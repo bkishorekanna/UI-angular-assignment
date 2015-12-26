@@ -1,0 +1,109 @@
+
+<div class="panel panel-primary" ng-if="!isPhone" >
+    <div class="table-responsive">
+
+        <div class="filter" style="text-align:center; " >
+            <img ng-repeat="img in filterImg" ng-src="{{img.url}}" style="margin-left: 20px;" ng-click="setFilter(img.vehicleType)" >
+        </div>
+
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+
+            <thead style="background-color: teal">
+            <br>
+            <div style="background-color: lightseagreen"><br></div>
+                <th ng:repeat="(i,th) in head">{{th}}<a ng-click="sort_by(i)"><i class="icon-sort"></i></a></th>
+
+            </thead>
+            <tfoot>
+            <td colspan="6">
+                <div class="pagination ">
+                    <ul>
+                        <li ng-class="{disabled: currentPage == 0}">
+                            <a href ng-click="prevPage()">« Prev</a>
+                        </li>
+                        <li ng-repeat="n in range(pagedItems.length)"
+                            ng-class="{active: n == currentPage}"
+                            ng-click="setPage()">
+                            <a href ng-bind="n + 1">1</a>
+                        </li>
+                        <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                            <a href ng-click="nextPage()">Next »</a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+            </tfoot>
+            <tbody>
+            <tr ng-repeat="car in pagedItems[currentPage] |  orderBy:sortingOrder:reverse " ng-click="getDetails(car.srNo)">
+                <td>
+                    <img ng-src="{{car.imgUrl}}"
+                         style="width:50px;margin:2px"
+                         title="{{car.srNo}}">
+                </td>
+                <td>{{ car.srNo}}</td>
+                <td>{{ car.vehicleType }}</td>
+                <td>{{ car.fuelLevel }}</td>
+                <td>{{ car.distance }}</td>
+            </tr>
+
+             </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="panel panel-primary" ng-if="isPhone" ng-repeat="car in cars ">
+    <div class="panel-heading"
+         style="background-color: #67b168" >
+        {{car.srNo}}
+    </div>
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-xs-4">
+
+                    <div>
+                        <img ng-src="{{car.imgUrl}}"
+                             style="width:100px;margin:2px"
+                             title="{{car.srNo}}">
+
+                    </div>
+                    <div>{{car.vehicleType}}</div>
+
+                </div>
+                <div class="col-xs-8">
+
+                    <dl ng-class="{'dl-horizontal': true,'custom': isPortrait}">
+
+                        <dt>Sap Id</dt>
+                        <dd>{{car.sapId}}</dd>
+
+                        <dt>Legacy Id </dt>
+                        <dd>{{car.legacyId}}</dd>
+
+                        <dt>Make</dd>
+                        <dd>{{car.make}}</dd>
+
+                        <dt>Model</dt>
+                        <dd>{{car.model}}</dd>
+
+                        <dt>Year</dt>
+                        <dd>{{car.year}}</dd>
+
+                        <dt>Last Reported</dt>
+                        <dd>{{car.lastRpt}}</dd>
+
+
+                    </dl>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

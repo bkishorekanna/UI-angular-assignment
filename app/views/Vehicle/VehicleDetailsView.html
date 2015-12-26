@@ -1,0 +1,111 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="background-color: #67b168" >
+        {{car.srNo}}
+    </div>
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+
+                <div class="col-xs-4">
+
+                    <div>
+                        <img ng-src="{{car.imgUrl}}"
+                             style="width:100px;"
+                             title="{{car.srNo}}">
+
+                    </div>
+                    <div>{{car.vehicleType}}</div>
+
+                    <dl  ng-class="{'dl-horizontal': true,'custom':!isPhone}" >
+
+                        <dt>Service Due</dt>
+                        <dd>{{car.serviceDue}}</dd>
+
+                        <dt>Legacy Id </dt>
+                        <dd>{{car.gpsId}}</dd>
+
+                        <dt>Vehicle Owner</dd>
+                        <dd>{{car.vehicleOwner}}</dd>
+
+                        <dt>No. Drivers</dt>
+                        <dd>{{car.noOfDrivers}}</dd>
+
+                        <dt>Change Per Hour</dt>
+                        <dd>{{car.chrgPerHr}}</dd>
+
+                        <dt>Parking garage</dt>
+                        <dd>{{car.parkGarage}}</dd>
+                    </dl>
+
+                </div>
+                <div class="col-xs-4" >
+
+                    <dl  ng-class="{'dl-horizontal': true,'custom':!isPhone}" >
+
+                        <dt>Sap Id</dt>
+                        <dd>{{car.sapId}}</dd>
+
+                        <dt>Legacy Id </dt>
+                        <dd>{{car.legacyId}}</dd>
+
+                        <dt>Make</dd>
+                        <dd>{{car.make}}</dd>
+
+                        <dt>Transmission</dt>
+                        <dd>{{car.Transmission}}</dd>
+
+                        <dt>Number Plate</dt>
+                        <dd>{{car.platNo}}</dd>
+
+                        <dt>Last Trip</dt>
+                        <dd>{{car.lastTrip}}</dd>
+
+                        <dt>Fuel Cost</dt>
+                        <dd>{{car.fuelCost}}</dd>
+
+                        <dt>Number Plate</dt>
+                        <dd>{{car.platNo}}</dd>
+
+                        <dt>Labor Cost</dt>
+                        <dd>{{car.laborCost}}</dd>
+
+                    </dl>
+                </div>
+                <div class="col-xs-4" >
+
+                    <dl  ng-class="{'dl-horizontal': true,'custom':!isPhone}" >
+
+                        <dt>Model</dt>
+                        <dd>{{car.model}}</dd>
+
+                        <dt>Year</dt>
+                        <dd>{{car.year}}</dd>
+
+                        <dt>Last Report</dd>
+                        <dd>{{car.lastRpt}}</dd>
+
+                        <dt>Odometer</dt>
+                        <dd>{{car.odometer}}</dd>
+
+                        <dt>Oil Level</dt>
+                        <dd>{{car.oilLevel}}</dd>
+
+                        <dt>Tire Pressure</dt>
+                        <dd>{{car.tirePressureLevel}}</dd>
+
+
+                        <dt>Ideal Houre</dt>
+                        <dd>{{car.idealHrs}}</dd>
+
+                        <dt>Renewal</dt>
+                        <dd>{{car.renewal}}</dd>
+                    </dl>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
